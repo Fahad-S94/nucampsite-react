@@ -6,6 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import HomePage from './pages/Homepage';
 import ContactPage from './pages/ContactPage';
 import CampsiteDetailPage from './pages/CampsiteDetailPage';
+import AboutPage from './pages/AboutPage';
 
 
 
@@ -18,9 +19,10 @@ function App() {
                 <Route path='contact' element={<ContactPage />} />
                 <Route path='directory' element={<CampsitesDirectoryPage />} />
                 <Route
-                    path='directory/:camsiteId'
+                    path='directory/:campsiteId'
                     element={<CampsiteDetailPage />}
                 />
+                <Route path='about' element={<AboutPage />} />
             </Routes>
             <Footer />
         </div>
@@ -28,3 +30,4 @@ function App() {
 }
 
 export default App;
+
