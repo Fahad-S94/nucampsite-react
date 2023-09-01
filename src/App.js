@@ -7,10 +7,21 @@ import HomePage from './pages/Homepage';
 import ContactPage from './pages/ContactPage';
 import CampsiteDetailPage from './pages/CampsiteDetailPage';
 import AboutPage from './pages/AboutPage';
-
-
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchCampsites } from './features/campsites/campsitesSlice';
+import { fetchPartners } from './features/partner/partnersSlice';
+import { fetchPromotions } from './features/promotions/promotionsSlice';
 
 function App() {
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(fetchCampsites())
+        dispatch(fetchPartners())
+        dispatch(fetchPromotions())
+    }, [dispatch])
+
     return (
         <div className='App'>
             <Header />
